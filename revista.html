@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout Grid - Magazine Style</title>
+    <style>
+        body { background: #fff5f5; font-family: 'Arial', sans-serif; padding: 20px; }
+        h1 { text-align: center; color: #ff4757; text-transform: uppercase; letter-spacing: 3px; }
+
+        /* Cuadrícula automática */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .item {
+            background: white;
+            border: 3px solid #000;
+            box-shadow: 10px 10px 0px #ff4757;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+
+        .item:hover { transform: translate(-5px, -5px); box-shadow: 15px 15px 0px #000; }
+        .featured { grid-column: span 2; background: #ff4757; color: white; }
+
+        @media (max-width: 700px) { .featured { grid-column: span 1; } }
+    </style>
+</head>
+<body>
+    <h1>Revista Digital</h1>
+    <div class="grid-container">
+        <article class="item featured">
+            <h2>Noticia Destacada</h2>
+            <p>Este elemento ocupa dos columnas gracias a 'grid-column: span 2'.</p>
+        </article>
+        <article class="item"><h3>Producto 1</h3><p>Descripción breve.</p></article>
+        <article class="item"><h3>Producto 2</h3><p>Descripción breve.</p></article>
+        <article class="item"><h3>Producto 3</h3><p>Descripción breve.</p></article>
+    </div>
+</body>
+</html>

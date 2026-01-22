@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout Sidebar - Dark Mode</title>
+    <style>
+        body { margin: 0; display: flex; font-family: 'Segoe UI', sans-serif; background: #121212; color: #e0e0e0; }
+        
+        /* Sidebar fija */
+        aside {
+            width: 250px;
+            background: #1f1f1f;
+            height: 100vh;
+            padding: 30px;
+            border-right: 1px solid #333;
+        }
+
+        /* Área de contenido */
+        main {
+            flex-grow: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .card {
+            background: #252525;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #bb86fc;
+        }
+
+        h1 { color: #bb86fc; }
+        nav ul { list-style: none; padding: 0; }
+        nav li { padding: 10px 0; border-bottom: 1px solid #333; cursor: pointer; }
+        nav li:hover { color: #bb86fc; }
+    </style>
+</head>
+<body>
+    <aside>
+        <h1>ADMIN</h1>
+        <nav>
+            <ul>
+                <li>Dashboard</li>
+                <li>Perfil</li>
+                <li>Ajustes</li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <h2>Bienvenido al Panel</h2>
+        <div class="card">
+            <p>Este layout utiliza <strong>Flexbox</strong> para empujar el contenido a la derecha de la barra lateral.</p>
+        </div>
+    </main>
+</body>
+</html>
