@@ -1,0 +1,52 @@
+/* Definición de Temas mediante Variables */
+
+.minimal {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-color: #666666;
+    --card-bg: #ffffff;
+    --border: 1px solid #eaeaea;
+    --shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.dark {
+    --bg-color: #0f172a;
+    --text-color: #e2e8f0;
+    --accent-color: #3b82f6;
+    --card-bg: #1e293b;
+    --border: 1px solid #334155;
+    --shadow: 0 10px 15px rgba(0,0,0,0.3);
+}
+
+.neo {
+    --bg-color: #f3f3f3;
+    --text-color: #000000;
+    --accent-color: #ffde03;
+    --card-bg: #ffffff;
+    --border: 4px solid #000000;
+    --shadow: 8px 8px 0px 0px #000000;
+}
+
+/* Aplicación de las Variables */
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: sans-serif;
+    transition: all 0.3s ease; /* Suaviza el cambio de color */
+    padding: 20px;
+}
+
+header {
+    background-color: var(--accent-color);
+    padding: 20px;
+    border: var(--border);
+    margin-bottom: 20px;
+}
+
+article {
+    background-color: var(--card-bg);
+    border: var(--border);
+    box-shadow: var(--shadow);
+    padding: 20px;
+}
