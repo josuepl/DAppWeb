@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <style>
+        /* Bordes visibles para estudio */
+        div, section, header { border: 2px dashed #666; margin: 10px; padding: 10px; }
+
+        .container-responsive {
+            display: flex;
+            flex-wrap: wrap; /* Permite que las cajas bajen si no caben */
+            background: #fff;
+        }
+
+        .card {
+            flex: 1; /* Crece para llenar el espacio */
+            min-width: 250px; /* Pero no se hace más pequeña que esto */
+            background: #e1f5fe;
+        }
+        img{
+            width: 100%;
+            min-width: 300px;
+        }
+        /* MEDIA QUERY: Cuando la pantalla sea menor a 600px */
+        @media (max-width: 600px) {
+            .card {
+                flex: 100%; /* La caja ocupa todo el ancho */
+                border-color: red; /* Cambiamos el color para notar el salto */
+                background: #ffebee;
+            }
+            h2::after { content: " (Modo Móvil)"; color: red; }
+        }
+    </style>
+</head>
+<body>
+    <h2>Prueba de Media Query</h2>
+    <p>Al ajustar el tamaño de la ventana se ajustará cada Tarjeta.</p>
+    
+    <section class="container-responsive">
+        <img src="./fondo.jpg" alt="Layout Web"> 
+        <div class="card">Caja Responsiva A</div>
+        <div class="card">Caja Responsiva B</div>
+        <div class="card">Caja Responsiva C</div>
+    </section>
+</body>
+</html>
