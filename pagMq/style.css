@@ -1,0 +1,97 @@
+
+        /* 1. VARIABLES Y BASE */
+        :root {
+            --primary: #1a73e8;
+            --dark: #121212;
+            --light: #ffffff;
+            --gray: #f4f4f4;
+            --border-box: 2px solid rgba(0,0,0,0.1); /* Para visualizar las cajas */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /* Activamos bordes en todo para que veas el comportamiento */
+            outline: 1px dashed rgba(255, 0, 0, 0.2); 
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* 2. ESTRUCTURA BASE (MÓVIL PRIMERO) */
+        .container {
+            width: 95%;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            gap: 20px;
+            /* Por defecto: 1 columna (Móvil) */
+            grid-template-columns: 1fr;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: var(--border-box);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        /* 3. MEDIA QUERIES ESTRATÉGICAS */
+
+        /* A. TABLETS: De 600px en adelante */
+        @media (min-width: 600px) {
+            .product-grid {
+                grid-template-columns: 1fr 1fr; /* Cambia a 2 columnas */
+            }
+            header {
+                background: #1e3a5f; /* Cambiamos color para notar el salto */
+            }
+            header h1::after { content: " (Tablet View)"; font-size: 0.5em; color: #90caf9; }
+        }
+
+        /* B. LAPTOPS/DESKTOP: De 1024px en adelante */
+        @media (min-width: 1024px) {
+            .product-grid {
+                grid-template-columns: 1fr 1fr 1fr; /* Cambia a 3 columnas */
+            }
+            .container {
+                width: 80%; /* Contenedor más centrado y estrecho en pantallas grandes */
+            }
+            header {
+                background: var(--dark);
+                padding: 4rem;
+            }
+            header h1::after { content: " (Desktop View)"; }
+        }
+
+        /* C. PANTALLAS ULTRA ANCHAS: Más de 1400px */
+        @media (min-width: 1400px) {
+            body {
+                background-color: #e0e0e0;
+            }
+            .product-grid {
+                gap: 40px; /* Más aire entre productos */
+            }
+        }
+    
