@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Tarjetas con DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1> Generador de Tarjetas Interactivo</h1>
+            <p class="subtitle">Crea tarjetas personalizadas usando JavaScript y DOM</p>
+        </header>
+
+        <div class="app-container">
+            <!-- Formulario para crear tarjetas -->
+            <div class="form-container">
+                <h2> Crear Nueva Tarjeta</h2>
+
+                <form id="tarjetaForm">
+                    <div class="form-group">
+                        <label for="titulo">Título de la tarjeta</label>
+                        <input type="text" id="titulo" placeholder="Ej: Proyecto JavaScript" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" placeholder="Describe el contenido de tu tarjeta..."
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">Categoría</label>
+                        <select id="categoria" required>
+                            <option value="">Selecciona una categoría</option>
+                            <option value="trabajo">Trabajo</option>
+                            <option value="personal">Personal</option>
+                            <option value="estudio">Estudio</option>
+                            <option value="hobbies">Hobbies</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Color de la tarjeta</label>
+                        <div class="color-picker">
+                            <div class="color-option selected" style="background: #3498db;" data-color="#3498db"></div>
+                            <div class="color-option" style="background: #2ecc71;" data-color="#2ecc71"></div>
+                            <div class="color-option" style="background: #e74c3c;" data-color="#e74c3c"></div>
+                            <div class="color-option" style="background: #f39c12;" data-color="#f39c12"></div>
+                            <div class="color-option" style="background: #9b59b6;" data-color="#9b59b6"></div>
+                        </div>
+                        <input type="hidden" id="colorSeleccionado" value="#3498db">
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" id="crearBtn"> Crear Tarjeta</button>
+                        <button type="button" id="limpiarBtn"> Limpiar Formulario</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Contenedor para mostrar las tarjetas -->
+            <div class="cards-container">
+                <div class="cards-header">
+                    <h2> Mis Tarjetas</h2>
+                    <div id="contadorTarjetas">0 tarjetas</div>
+                </div>
+
+                <div class="cards-grid" id="cardsGrid">
+                    <!-- Estado inicial vacío -->
+                    <div class="empty-state" id="emptyState">
+                        <div></div>
+                        <h3>No hay tarjetas creadas</h3>
+                        <p>¡Usa el formulario para crear tu primera tarjeta!</p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
