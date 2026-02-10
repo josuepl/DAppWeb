@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo DOM</title>
+</head>
+
+<body>
+    <h1 id="titulo">Hola Mundo</h1>
+    <button id="cambiarBtn">Cambiar texto</button>
+    <div id="contenedor"></div>
+
+    <script>
+        // Seleccionar elementos
+        const titulo = document.getElementById('titulo');
+        const boton = document.getElementById('cambiarBtn');
+        const contenedor = document.getElementById('contenedor');
+
+        // Escuchar evento click
+        boton.addEventListener('click', function () {
+            // Modificar contenido
+            titulo.textContent = '¡Texto cambiado!';
+            titulo.style.color = 'red';
+
+            // Crear nuevo elemento
+            const nuevoParrafo = document.createElement('p');
+            nuevoParrafo.textContent = 'Este párrafo fue creado dinámicamente';
+            contenedor.appendChild(nuevoParrafo);
+        });
+    </script>
+</body>
+
+</html>
